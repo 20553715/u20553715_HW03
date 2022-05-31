@@ -20,7 +20,7 @@ namespace u20553715_HW03.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Trial()
         {
             ViewBag.Message = "Your contact page.";
 
