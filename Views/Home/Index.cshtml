@@ -2,30 +2,53 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<div class="container-fluid">
+    <div class="row">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <div class="col-sm-6">
+
+            <br />
+            <br/>
+
+            <h1>EvoMedia</h1>
+
+            <h2>The Place to Store Media</h2>
+
+            <p>
+                EvoMedia is a file storage place. This system allows the user to store the different media types. Documents, Images and Video are the types of media that can be stored on the system. The sytem will allow the user to name the file, upload the file, download the file and delete the file. This system is useful for information organisation on a budget.
+            </p>
+
+        </div>
+
+        <div class="col-sm-4" >
+
+            <h2>Option Selection</h2>
+            <br />
+            <br />
+            
+            @using (Html.BeginForm("Index", "FileUpload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+            // an encoding type that allows files to be sent through a POST.
+            // Quite simply, without this encoding the files cannot be sent through POST.
+            {
+
+                
+                <div><input type="radio" name="Document" /> Document</div>
+                <br />
+                <div><input type="radio" name="Image" /> Image</div>
+                <br />
+                <div><input type="radio" name="Video" /> Video</div>
+                <br />
+                <div><input type="file" name="files" /></div>
+                <br />
+                <div><input type="submit" value="Submit" /></div>
+            }
+        </div>
+        <br />
+
+
+
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
