@@ -8,7 +8,8 @@
         <div class="col-sm-6">
 
             <br />
-            <br/>
+            <br />
+            <br />
 
             <h1>EvoMedia</h1>
 
@@ -20,26 +21,28 @@
 
         </div>
 
-        <div class="col-sm-4" >
-
+        <div class="col-sm-4">
+            <br />
+            <br />
+            <br />
             <h2>Option Selection</h2>
             <br />
             <br />
-            
-            @using (Html.BeginForm("Index", "FileUpload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 
             // an encoding type that allows files to be sent through a POST.
             // Quite simply, without this encoding the files cannot be sent through POST.
             {
 
-                
-                <div><input type="radio" name="Document" /> Document</div>
+
+                <div><input type="radio" name="File" value="Document" /> Document</div>
                 <br />
-                <div><input type="radio" name="Image" /> Image</div>
+                <div><input type="radio" name="File" value="Image" /> Image</div>
                 <br />
-                <div><input type="radio" name="Video" /> Video</div>
+                <div><input type="radio" name="File" value="Video" /> Video</div>
                 <br />
-                <div><input type="file" name="files" /></div>
+                <div><input type="file" name="File" value="files" /></div>
                 <br />
                 <div><input type="submit" value="Submit" /></div>
             }
