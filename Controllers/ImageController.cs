@@ -16,10 +16,12 @@ namespace u20553715_HW03.Controllers
         {
             string[] fileDirectory = Directory.GetFiles(Server.MapPath("~/Media/Images/"));
             List<FileModel> files = new List<FileModel>();
+
             foreach (string filePath in fileDirectory)
             {
                 files.Add(new FileModel { FileName = Path.GetFileName(filePath) });
             }
+
             return View(files);
 
         }
