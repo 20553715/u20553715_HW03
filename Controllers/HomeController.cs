@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.IO;
 
+
 namespace u20553715_HW03.Controllers
 {
     public class HomeController : Controller
@@ -18,38 +19,38 @@ namespace u20553715_HW03.Controllers
 
         //POST: Index
         [HttpPost]
-        public ActionResult Index(HttpPostedFileBase files, string File) //INSIDE HOME
+        public ActionResult Index(HttpPostedFileBase Files, string File) 
         {
            
 
-            if (files != null && files.ContentLength > 0 && File == "Document")
+            if (Files != null && Files.ContentLength > 0 && File == "Document")
             {
 
-                var fileName = Path.GetFileName(files.FileName);
-                var path = Path.Combine(Server.MapPath("~/Media/Documents/"), fileName);
+                var fileName = Path.GetFileName(Files.FileName);
+                var path = Path.Combine(Server.MapPath("~/Media/Documents"), fileName);
 
-                files.SaveAs(path);
+                Files.SaveAs(path);
 
             }
-            if (files != null && files.ContentLength > 0 && File == "Image")
+            else if (Files != null && Files.ContentLength > 0 && File == "Image")
             {
 
-                var fileName = Path.GetFileName(files.FileName);
+                var fileName = Path.GetFileName(Files.FileName);
                 var path = Path.Combine(Server.MapPath("~/Media/Images"), fileName);
 
-                files.SaveAs(path);
+                Files.SaveAs(path);
 
             }
-            if (files != null && files.ContentLength > 0 && File == "Video")
+            else if (Files != null && Files.ContentLength > 0 && File == "Video")
             {
 
-                var fileName = Path.GetFileName(files.FileName);
+                var fileName = Path.GetFileName(Files.FileName);
                 var path = Path.Combine(Server.MapPath("~/Media/Video"), fileName);
 
-                files.SaveAs(path);
+                Files.SaveAs(path);
 
             }
-            // redirect back to the index action to show the form once again
+            
 
             return RedirectToAction("Index");
         }
@@ -59,7 +60,7 @@ namespace u20553715_HW03.Controllers
             return View();
         }
 
-        
 
+       
     }
 }

@@ -4,17 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
-using u20553715_HW03.Models; 
-
+using u20553715_HW03.Models;
 
 namespace u20553715_HW03.Controllers
 {
-    public class FileController : Controller
+    public class ImageController : Controller
     {
+
         // GET: File
         public ActionResult Index()
         {
-            string[] fileDirectory = Directory.GetFiles(Server.MapPath("~/Media/Documents/"));
+            string[] fileDirectory = Directory.GetFiles(Server.MapPath("~/Media/Images/"));
             List<FileModel> files = new List<FileModel>();
             foreach (string filePath in fileDirectory)
             {
@@ -24,21 +24,21 @@ namespace u20553715_HW03.Controllers
 
         }
 
-        public FileResult DownloadFile(string fileName) 
+        public FileResult DownloadFile(string fileName)
         {
-            //Build 
-            string path = Server.MapPath("~/Media/Documents/") + fileName;
+            //Build
+            string path = Server.MapPath("~/Media/Images/") + fileName;
 
             //Read
             byte[] bytes = System.IO.File.ReadAllBytes(path);
 
-            //Send 
+            //Send
             return File(bytes, "application/octet-stream", fileName);
         }
 
         public ActionResult DeleteFile(string fileName)
         {
-            string path = Server.MapPath("~/Media/Documents/") + fileName;
+            string path = Server.MapPath("~/Media/Images/") + fileName;
             System.IO.File.Delete(path);
 
             return RedirectToAction("Index");

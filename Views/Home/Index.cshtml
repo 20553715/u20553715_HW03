@@ -1,4 +1,7 @@
-﻿@{
+﻿@using u20553715_HW03.Models;
+@model IEnumerable<u20553715_HW03.Models.FileModel>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -16,7 +19,11 @@
             <h2>The Place to Store Media</h2>
 
             <p>
-                EvoMedia is a file storage place. This system allows the user to store the different media types. Documents, Images and Video are the types of media that can be stored on the system. The sytem will allow the user to name the file, upload the file, download the file and delete the file. This system is useful for information organisation on a budget.
+                EvoMedia is a file storage place.
+                This system allows the user to store the different media types.
+                Documents, Images and Video are the types of media that can be stored on the system.
+                The sytem will allow the user to name the file, upload the file, download the file and delete the file.
+                This system is useful for information organisation on a budget.
             </p>
 
         </div>
@@ -30,10 +37,7 @@
             <br />
 
             @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-
-            // an encoding type that allows files to be sent through a POST.
-            // Quite simply, without this encoding the files cannot be sent through POST.
-            {
+             {
 
 
                 <div><input type="radio" name="File" value="Document" /> Document</div>
@@ -45,13 +49,13 @@
                 <div><input type="file" name="File" value="files" /></div>
                 <br />
                 <div><input type="submit" value="Submit" /></div>
-            }
+             }
         </div>
-        <br />
+       
 
 
 
     </div>
 
 
-    </div>
+</div>
